@@ -44,4 +44,18 @@ const bookStore = {
 }
 
 // Write your code here!
+const header = document.querySelector('#header');
+header.innerHTML = 'Flatbooks Technical Books';
+
+const bookList = document.querySelector('#book-list');
+bookList.innerHTML = '';
+for (const book of bookStore.books) {
+    const li = document.createElement('li');
+    li.innerHTML = `
+        <h3>${book.title}</h3>
+        <p>${book.author}</p>
+        <img src="${book.imageUrl}">
+    `;
+    bookList.appendChild(li);
+}
 
